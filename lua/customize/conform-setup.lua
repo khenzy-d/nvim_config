@@ -1,0 +1,34 @@
+require("conform").setup({
+    formatters_by_ft = {
+        ["_"] = { "trim_whitespace", "trim_newlines" },
+        lua = { "stylua" },
+        nginx = { "nginxfmt" },
+        markdown = { "prettierd", "prettier", stop_after_first = true },
+        json = { "prettierd", "prettier", stop_after_first = true },
+        yaml = { "prettierd", "prettier", stop_after_first = true },
+        html = { "prettierd", "prettier", stop_after_first = true },
+        xml = { "xmlformatter" },
+        xaml = { "xmlformatter" },
+        css = { "prettierd", "prettier", stop_after_first = true },
+        javascript = { "prettierd", "prettier", stop_after_first = true },
+        typescript = { "prettierd", "prettier", stop_after_first = true },
+        javascriptreact = { "prettierd", "prettier", stop_after_first = true },
+        typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+        python = { "black" },
+        go = { "gofmt" },
+        sh = { "shfmt" },
+        toml = { "tombi" }
+    },
+    formatters = {
+        nginxfmt = {
+            append_args = { "-i", "4", "--max-empty-lines", "1" },
+        },
+        stylua = {
+            prepend_args = { "--indent-type", "Spaces", "--indent-width", "4" },
+        },
+        xmlformatter = {
+            prepend_args = { "--selfclose", "--selfclose-space" },
+            args = { "--indent", "4", "--indent-char", " ", "--blanks", "-" },
+        },
+    },
+})

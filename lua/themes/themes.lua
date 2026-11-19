@@ -1,0 +1,54 @@
+return {
+    { "projekt0n/github-nvim-theme", name = "github-theme" },
+    "tanvirtin/monokai.nvim",
+    "ellisonleao/gruvbox.nvim",
+    "p00f/alabaster.nvim",
+    "Mofiqul/dracula.nvim",
+    "olimorris/onedarkpro.nvim",
+    {
+        "shatur/neovim-ayu",
+        config = function()
+            require("ayu").setup({
+                overrides = {
+                    Normal = { bg = "None" },
+                    NormalFloat = { bg = "none" },
+                    ColorColumn = { bg = "None" },
+                    SignColumn = { bg = "None" },
+                    Folded = { bg = "None" },
+                    FoldColumn = { bg = "None" },
+                    CursorLine = { bg = "None" },
+                    CursorColumn = { bg = "None" },
+                    VertSplit = { bg = "None" },
+                },
+            })
+        end,
+    },
+    {
+        "Mofiqul/adwaita.nvim",
+        lazy = false,
+        priority = 1000,
+    },
+    {
+        "d-bastian/gruber-dark.nvim",
+        name = "gruber-dark",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("gruber-dark").setup({
+                transparent = true,
+                terminal_colors = true,
+            })
+        end,
+    },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        opts = {
+            transparent_background = true,
+            float = {
+                transparent = true,
+            },
+        },
+    },
+}
